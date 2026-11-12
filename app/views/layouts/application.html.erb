@@ -40,7 +40,7 @@
   <div class="container">
     <div class="row">
       <% flash.each do |a, b| %>
-        <div class="alert alert-success"><%= b %></div>
+        <div class="alert alert-<%= %w[error alert].include?(a.to_s) ? "danger" : "success" %>"><%= b %></div>
       <% end %>
       <div class="col-lg-12 text-center">
         <%= yield %>

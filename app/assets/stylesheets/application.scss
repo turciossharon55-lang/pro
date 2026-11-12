@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body { background-color: #fafafa; }
+
+.post-card {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  padding: 15px;
+}
+.post-card img { max-width: 100%; height: auto; }
+.post-card .link { margin-top: 10px; }

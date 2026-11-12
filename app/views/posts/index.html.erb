@@ -1,5 +1,5 @@
 <% @posts.each do |x| %>
-  <div>
+  <div class="post-card">
     <%= image_tag x.image.url(:medium) %>
     <br>
     <%= x.description %>
