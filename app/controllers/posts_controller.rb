@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_owner, only: [:destroy]
+  before_action :require_owner, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -30,6 +30,19 @@ class PostsController < ApplicationController
       flash[:success] = "The post is destroy!"
     end
     redirect_to posts_path
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update(permit_post)
+      flash[:success] = "Post updated!"
+      redirect_to post_path(@post)
+    else
+      flash[:error] = @post.errors.full_messages
+      redirect_to edit_post_path(@post)
+    end
   end
 
   private
