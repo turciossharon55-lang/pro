@@ -51,3 +51,9 @@ group :test do
 end
 
 gem "devise", "~> 5.0"
+
+gem "bootstrap-sass", "~> 3.4.1"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "jquery-rails", "~> 4.6"
