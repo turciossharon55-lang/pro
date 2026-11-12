@@ -4,8 +4,10 @@
     <br>
     <%= x.description %>
     <div class="link">
-      <%= button_to "Destroy", x, method: :delete, class: "btn btn-link", form: { style: "display:inline", onsubmit: "return confirm('Are you sure?')" } %>
-      <%= link_to "Edit", edit_post_path(x) %>
+      <% if current_user == x.user %>
+        <%= button_to "Destroy", x, method: :delete, class: "btn btn-link", form: { style: "display:inline", onsubmit: "return confirm('Are you sure?')" } %>
+        <%= link_to "Edit", edit_post_path(x) %>
+      <% end %>
       <%= link_to "Show", x %>
     </div>
   </div>

@@ -1,7 +1,9 @@
 <%= image_tag(@post.image.url(:large)) %>
 <br>
 <%= @post.description %>
-<div class="link">
-  <%= button_to "Destroy", @post, method: :delete, class: "btn btn-link", form: { style: "display:inline", onsubmit: "return confirm('Are you sure?')" } %>
-  <%= link_to "Edit", edit_post_path(@post) %>
-</div>
+<% if current_user == @post.user %>
+  <div class="link">
+    <%= button_to "Destroy", @post, method: :delete, class: "btn btn-link", form: { style: "display:inline", onsubmit: "return confirm('Are you sure?')" } %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+  </div>
+<% end %>
