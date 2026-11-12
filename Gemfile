@@ -57,3 +57,5 @@ gem "bootstrap-sass", "~> 3.4.1"
 gem "sassc-rails", "~> 2.1"
 
 gem "jquery-rails", "~> 4.6"
+
+gem "kt-paperclip", "~> 8.0"
