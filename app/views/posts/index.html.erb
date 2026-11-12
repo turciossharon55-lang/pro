@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |x| %>
+  <div>
+    <%= image_tag x.image.url(:medium) %>
+    <br>
+    <%= x.description %>
+    <div class="link">
+      <%= button_to "Destroy", x, method: :delete, class: "btn btn-link", form: { style: "display:inline", onsubmit: "return confirm('Are you sure?')" } %>
+      <%= link_to "Edit", edit_post_path(x) %>
+      <%= link_to "Show", x %>
+    </div>
+  </div>
+<% end %>
